@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Comentários</title>
+
+    <!-- Adicione os links para o Bootstrap CSS e jQuery -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="ASSETS/CSS/styles.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<body>
+<div class="container mt-5">
+    <h1 class="text-center">Sistema de Comentários</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form id="comment-form">
+                <div class="mb-3">
+                    <label for="comment-text" class="form-label">Insira seu comentário:</label>
+                    <textarea class="form-control" id="comment-text" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-6">
+            <label for="sort-select" class="form-label">Ordenar por:</label>
+            <select id="sort-select" class="form-select">
+                <option value="recentes">Mais Recentes</option>
+                <option value="antigos">Mais Antigos</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-6">
+            <div id="comment-list">
+                <!-- Aqui serão exibidos os comentários -->
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Modal de confirmação de exclusão -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirmar Exclusão</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Tem certeza de que deseja excluir este comentário?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="ASSETS/JS/index.js"></script>
+</body>
+</html>
